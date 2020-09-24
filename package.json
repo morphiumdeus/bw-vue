@@ -2,19 +2,30 @@
   "name": "bw2web",
   "version": "0.1.0",
   "private": true,
+  "comment": "//https://github.com/Microsoft/monaco-editor-webpack-plugin/issues/42",
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
     "lint": "vue-cli-service lint"
   },
   "dependencies": {
-    "core-js": "^2.6.5",
-    "vue": "^2.6.6"
+    "axios": "^0.18.0",
+    "core-js": "^2.6.6",
+    "js-yaml": "^3.13.1",
+    "monaco-editor": "0.13.1",
+    "monaco-editor-webpack-plugin": "1.4.0",
+    "semantic-ui-css": "^2.4.1",
+    "semantic-ui-vue": "^0.8.1",
+    "vue": "^2.6.6",
+    "vue-axios": "^2.1.4",
+    "vue-monaco": "^0.3.1",
+    "vue-virtual-table": "^0.2.12",
+    "vuex": "^3.1.1"
   },
   "devDependencies": {
-    "@vue/cli-plugin-babel": "^3.5.0",
-    "@vue/cli-plugin-eslint": "^3.5.0",
-    "@vue/cli-service": "^3.5.0",
+    "@vue/cli-plugin-babel": "^3.7.0",
+    "@vue/cli-plugin-eslint": "^3.7.0",
+    "@vue/cli-service": "^3.7.0",
     "babel-eslint": "^10.0.1",
     "eslint": "^5.8.0",
     "eslint-plugin-vue": "^5.0.0",
