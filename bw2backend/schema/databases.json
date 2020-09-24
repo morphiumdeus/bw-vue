@@ -1,0 +1,50 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "databases.json",
+    "title": "Level 2: Database definition",
+    "description": "Defines where databases are loaded from.",
+    "type": "array",
+    "items": {
+        "type": "object",
+        "required": [
+            "id",
+            "type",
+            "location"
+        ],
+        "defaultSnippets": [
+            {
+                "label": "New ecoInvent database",
+                "description": "Loads a database in Ecospold2 format",
+                "body": { "id": "$1", "type": "$2", "location": "$3", "name": "$4", "source": "$5" }
+            }
+        ],
+        "properties": {
+            "id": {
+                "description": "An id to refer to it later on",
+                "type": "string"
+            },
+            "name": {
+                "description": "A name for the database. Currently only for info",
+                "type": "string"
+            },
+            "type": {
+                "description": "What format is the database?",
+                "type": "string",
+                "enum": [
+                    "SingleOutputEcospold1Importer",
+                    "SingleOutputEcospold2Importer",
+                    "BW2package"
+                ]
+            },
+            "source": {
+                "description": "Where the database comes from. If possible a direct weblink to the file (even if you have to be logged in), otherwise a description of the origin of the file and version information",
+                "type": "string"
+            },
+            "location": {
+                "description": "The file of the database on the server running python. We will develop a means to upload databases.",
+                "type": "string",
+                "pattern": "^(.*/)?(?:$|(.+?)(?:(\\.[^.]*$)|$))"
+            }
+        }
+    }
+}

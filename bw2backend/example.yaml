@@ -1,0 +1,40 @@
+---
+# To be able to split the document, we create a master "project" key that will be used to run the brightway2 project stuff
+project:
+  name: Test2
+  databases:       
+    - id: ecoInvent3
+      type: SingleOutputEcospold2Importer
+      name: ecoinvent 3.5 cutoff
+      source: https://v35.ecoquery.ecoinvent.org/File/File?fileName=ecoinvent+3.5+(2018)%2c+current%5cLCI+and+LCIA+results+-+cut-off+system+model%5cecoinvent+3.5_cutoff_ecoSpold02.7z&hash=-970574308&type=Files
+      location: /Users/oliver.hurtig/Downloads/ecoinvent/datasets
+    - id: forwast
+      type: BW2package
+      name: forwast
+      source: https://lca-net.com/wp-content/uploads/forwast.bw2package.zip
+      location: /Users/oliver.hurtig/Downloads/ecoinvent/forwast.bw2package
+  activities:    
+    - id: drinkWater
+      name: drinking water, from tap
+      production amount: 1.0
+      reference product: water
+      type: process
+      unit: liter
+      activity type: ordinary transforming activity
+      authors:
+        data entry: {email: oliver.hurtig@dechema.de, name: Oliver Hurtig}
+        data generator: {email: oliver.hurtig@dechema.de, name: Oliver Hurtig}
+      classifications:
+        - (ISIC rev.4 ecoinvent, '3600:Water collection, treatment and supply')
+      comment: 'just a demo activity'
+      location: DE
+      parameters: []
+      exchanges:
+        - amount: 1
+          input: [ecoInvent3, da7b710a5126989654fe3b875492c1b1]
+          type: technosphere
+  singleLCA:
+      - id: drinkWaterLCA
+        activity: drinkWater
+        amount: 1
+        lcia: ['IPCC 2013', 'climate change', 'GWP 100a']

@@ -1,0 +1,60 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "activities.json",
+    "title": "Level 2: Activities definition",
+    "description": "User defined activities. Can be based on database activities or defined from scratch",
+    "type": "array",
+    "items": {
+        "type": "object",
+        "required": [
+            "id",
+            "name",
+            "type",
+            "production amount",
+            "unit",
+            "authors",
+            "exchanges"
+        ],
+        "properties": {
+            "id": {
+                "description": "An id to refer to it later on",
+                "type": "string"
+            },
+            "name": {
+                "description": "A name for the activity.",
+                "type": "string"
+            },
+            "type": {
+                "description": "What type is the activity? In general, this is 'process'",
+                "type": "string",
+                "default": "process"
+            },
+            "production amount": {
+                "description": "How much of the product is produced? Also define the unit",
+                "type": "number"
+            },
+            "unit": {
+                "description": "What's the unit? kg, liter, m3?",
+                "type": "string"
+            },
+            "authors": {
+                "description": "Who is responsible for the data?",
+                "type": "object",
+                "properties": {
+                    "data entry": {
+                        "description": "Who is responsible for entering the data?",
+                        "type": "object"
+                    },
+                    "data generator": {
+                        "description": "Who is responsible for gathering or generating the data?",
+                        "type": "object"
+                    }
+                }
+            },
+            "exchanges": {
+                "description": "All exchanges (inputs, outputs) with the biosphere and technosphere",
+                "type": "array"
+            }
+        }
+    }
+}

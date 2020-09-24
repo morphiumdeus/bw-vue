@@ -1,0 +1,10 @@
+[Core]
+Name = Databases Plugin
+Module = DatabasesPlugin
+
+[Documentation]
+Author = Oliver Hurtig
+Version = 0.1
+Website = http://none
+Description = Loading LCA databases
+Copyright = 2019

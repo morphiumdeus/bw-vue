@@ -1,0 +1,10 @@
+[Core]
+Name = Project Plugin
+Module = ProjectPlugin
+
+[Documentation]
+Author = Oliver Hurtig
+Version = 0.1
+Website = http://none
+Description = Setting Project
+Copyright = 2019

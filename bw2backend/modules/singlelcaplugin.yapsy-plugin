@@ -1,0 +1,10 @@
+[Core]
+Name = Single LCA Plugin
+Module = SingleLCAPlugin
+
+[Documentation]
+Author = Oliver Hurtig
+Version = 0.1
+Website = http://none
+Description = Executing a single LCA
+Copyright = 2019

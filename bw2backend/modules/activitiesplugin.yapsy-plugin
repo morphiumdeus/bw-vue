@@ -1,0 +1,10 @@
+[Core]
+Name = Activities Plugin
+Module = ActivitiesPlugin
+
+[Documentation]
+Author = Oliver Hurtig
+Version = 0.1
+Website = http://none
+Description = Defining own activities
+Copyright = 2019
